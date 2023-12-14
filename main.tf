@@ -200,3 +200,4 @@ resource "aws_cloudwatch_metric_alarm" "vividarts_studio_metrics" {
   alarm_description         = "This metric monitors ec2 cpu utilization"
   insufficient_data_actions = []
 }
+
