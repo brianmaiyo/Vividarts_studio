@@ -9,8 +9,8 @@ terraform {
 
 provider "aws" {
   region     = "us-east-1"
-  access_key = "AKIAWJ2SD35OG4PSVNPV"
-  secret_key = "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"
+  access_key = "AKIAWJ2SD35ONHZHVI5X"
+  secret_key = "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"
 }
 
 #Creating a VPC
@@ -51,11 +51,7 @@ resource "aws_route_table" "prod_route_table" {
     gateway_id = aws_internet_gateway.prod_gateway.id
   }
 
-  route {
-    ipv6_cidr_block        = "::/0"
-    egress_only_gateway_id = aws_internet_gateway.prod_gateway.id
-  }
-
+  
   tags = {
     Name = "production_routes"
   }
@@ -131,17 +127,17 @@ resource "aws_network_interface" "provisioned_resources" {
 }
 
 #Public IP address for the rest
-resource "aws_eip" "one" {
-  domain                    = "vpc"
-  network_interface         = aws_network_interface.provisioned_resources.id
-  associate_with_private_ip = "10.0.1.50"
-  depends_on                = [aws_internet_gateway.prod_gateway]
-}
+# resource "aws_eip" "one" {
+#   domain                    = "vpc"
+#   network_interface         = aws_network_interface.provisioned_resources.id
+#   associate_with_private_ip = "10.0.1.50"
+#   depends_on                = [aws_internet_gateway.prod_gateway]
+# }
 
-output "my_public_IP" {
-  value = aws_eip.one.public_ip
+# output "my_public_IP" {
+#   value = aws_eip.one.public_ip
 
-}
+# }
 
 #Creating an Ubuntu server instance (EC2)
 resource "aws_instance" "web_server_prod" {
@@ -159,16 +155,16 @@ resource "aws_instance" "web_server_prod" {
   }
 }
 
-resource "aws_s3_bucket" "vividstudio_bucket_9876" {
-    bucket = "vividstudio_bucket_9876"
+resource "aws_s3_bucket" "vividstudiobucket9876" {
+    bucket = "vividstudiobucket9876"
     tags = {
       Environment = "production" 
     } 
   
 }
 
-resource "aws_s3_bucket_lifecycle_configuration" "vividstudio_bucket_9876" {
-    bucket = aws_s3_bucket.vividstudio_bucket_9876.id
+resource "aws_s3_bucket_lifecycle_configuration" "vividstudiobucket9876" {
+    bucket = aws_s3_bucket.vividstudiobucket9876.id
     
     rule {
         id = "uploads"
@@ -185,6 +181,7 @@ resource "aws_s3_bucket_lifecycle_configuration" "vividstudio_bucket_9876" {
           days =  60
           storage_class = "GLACIER"
         }
+        
     }  
 }
 
