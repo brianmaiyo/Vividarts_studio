@@ -100,8 +100,7 @@ This is a guide to running the project locally and replicating all the steps fol
 # Contact
  1. Anthony Kioko - https://github.com/Tonny-Kioko - https://www.linkedin.com/in/anthony-kioko-4021b01a5
 
- 2. Brian Maiyo - https://github.com/brianmaiyo
-
+ 2. Brian Maiyo - https://github.com/brianmaiyo - https://www.linkedin.com/in/brianmaiyo
  3. Eugene Appertey - https://github.com/UJAY-UJAY
 
 
