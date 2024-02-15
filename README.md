@@ -102,6 +102,7 @@ This is a guide to running the project locally and replicating all the steps fol
 
  2. Brian Maiyo - https://github.com/brianmaiyo - https://www.linkedin.com/in/brianmaiyo
  3. Eugene Appertey - https://github.com/UJAY-UJAY
+ 4. Emmory Chirchir -https://github.com/Oturpik- https://www.linkedin.com/in/chirchir-kipruto/
 
 
 
