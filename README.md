@@ -6,6 +6,7 @@
  2. Brian Maiyo - https://github.com/brianmaiyo
 
  3. Eugene Appertey - https://github.com/UJAY-UJAY
+ 4. Emmory Chirchir -https://github.com/Oturpik
 
 # Project Overview
 
